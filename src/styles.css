@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -10,7 +11,7 @@
   --color-fg: #042628;
   --color-muted: #8aa3a4;
   --font-display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
-  --font-hero: "Poppins", "Arial Black", system-ui, sans-serif;
+  --font-hero: "Montserrat", "Arial Black", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --radius-pill: 999px;
   --shadow-launch:
@@ -70,55 +71,62 @@
 .line-small,
 .line-hero,
 .line-large {
-  font-family: var(--font-hero);
+  font-family: "Montserrat", "Arial Black", system-ui, sans-serif;
   font-weight: 900;
   line-height: 0.92;
-  text-wrap: balance;
   letter-spacing: -0.02em;
+  display: block;
 }
 
 .line-small {
-  font-size: clamp(1.7rem, 8.5vw, 2.4rem);
-  color: var(--color-cream);
-  -webkit-text-stroke: 1.5px var(--color-teal-dark);
+  font-size: clamp(1.4rem, 7vw, 2.2rem);
+  color: #ffffff;
+  white-space: nowrap;
+  -webkit-text-stroke: 1.5px #042628;
+  paint-order: stroke fill;
   text-shadow:
-    1px 1px 0 var(--color-teal-dark),
-    2px 2px 0 var(--color-teal-dark),
-    3px 3px 0 var(--color-teal-dark),
-    4px 4px 0 var(--color-teal-dark),
-    5px 5px 0 var(--color-teal-dark),
-    6px 6px 0 var(--color-teal-dark);
+    1px 1px 0 #042628,
+    2px 2px 0 #042628,
+    3px 3px 0 #042628,
+    4px 4px 0 #042628,
+    0 6px 14px rgba(4, 38, 40, 0.45);
 }
 
 .line-hero {
-  font-size: clamp(2.15rem, 12vw, 4.2rem);
-  color: var(--color-orange);
-  -webkit-text-stroke: 2px #fff;
+  font-size: clamp(2.2rem, 11.5vw, 4.4rem);
+  color: #FF6D1F;
+  white-space: nowrap;
+  -webkit-text-stroke: 2.5px #ffffff;
+  paint-order: stroke fill;
   text-shadow:
+    /* white outline */
     -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff,
-    1px 1px 0 var(--color-orange-dark),
-    2px 2px 0 var(--color-orange-dark),
-    3px 3px 0 var(--color-orange-dark),
-    4px 4px 0 var(--color-orange-dark),
-    5px 5px 0 var(--color-orange-dark),
-    6px 6px 0 var(--color-orange-dark),
-    7px 7px 0 var(--color-orange-dark);
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff,
+    /* solid 3D extrusion */
+    2px 2px 0 #C2500F,
+    3px 3px 0 #C2500F,
+    4px 4px 0 #C2500F,
+    5px 5px 0 #C2500F,
+    6px 6px 0 #C2500F,
+    7px 7px 0 #C2500F,
+    /* soft depth glow */
+    0 10px 22px rgba(194, 80, 15, 0.5);
 }
 
 .line-large {
-  font-size: clamp(1.9rem, 10.5vw, 3.4rem);
-  color: var(--color-cream);
-  -webkit-text-stroke: 1.5px var(--color-teal-dark);
+  font-size: clamp(1.85rem, 9.5vw, 3.4rem);
+  color: #ffffff;
+  white-space: nowrap;
+  -webkit-text-stroke: 1.5px #042628;
+  paint-order: stroke fill;
   text-shadow:
-    1px 1px 0 var(--color-teal-dark),
-    2px 2px 0 var(--color-teal-dark),
-    3px 3px 0 var(--color-teal-dark),
-    4px 4px 0 var(--color-teal-dark),
-    5px 5px 0 var(--color-teal-dark),
-    6px 6px 0 var(--color-teal-dark);
+    1px 1px 0 #042628,
+    2px 2px 0 #042628,
+    3px 3px 0 #042628,
+    4px 4px 0 #042628,
+    0 6px 14px rgba(4, 38, 40, 0.45);
 }
 
 .kiosk-scrim {
@@ -139,8 +147,35 @@
 .headline-block {
   position: relative;
   margin-top: 0.65rem;
-  max-width: min(72vw, 34rem);
+  max-width: min(90vw, 40rem);
 }
+
+/* 8-spoke starburst behind the headline text */
+.headline-block::before {
+  content: '';
+  position: absolute;
+  width: 160%;
+  height: 260%;
+  top: -80%;
+  left: -30%;
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(255, 109, 31, 0.82) 0deg 3deg,
+    transparent                3deg 45deg
+  );
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.28;
+  mask-image: radial-gradient(
+    ellipse 75% 65% at 50% 50%,
+    black 30%, transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 65% at 50% 50%,
+    black 30%, transparent 100%
+  );
+}
+
 
 .live-deals-link {
   margin-top: 0.85rem;
@@ -189,25 +224,7 @@
   min-width: 0;
 }
 
-.headline-sparks {
-  position: absolute;
-  inset: -8px -12px;
-  pointer-events: none;
-  z-index: -1;
-}
 
-.spark {
-  position: absolute;
-  background: var(--color-orange);
-  border-radius: 999px;
-}
-
-.spark-1 { width: 6px; height: 32px; top: -4px; left: 12%; transform: rotate(-42deg); }
-.spark-2 { width: 7px; height: 36px; top: -8px; right: 10%; transform: rotate(34deg); }
-.spark-3 { width: 5px; height: 22px; top: 42%; left: -6px; transform: rotate(-90deg); }
-.spark-4 { width: 6px; height: 28px; top: 48%; right: -4px; transform: rotate(85deg); }
-.spark-5 { width: 6px; height: 30px; bottom: -2px; left: 18%; transform: rotate(-135deg); }
-.spark-6 { width: 7px; height: 34px; bottom: -6px; right: 14%; transform: rotate(140deg); }
 
 /* Fox — right side, oversized, nudged up + slightly left, clipped by the stage */
 .mascot-stage {
@@ -271,6 +288,11 @@
   box-shadow: var(--shadow-launch);
   transition: transform 150ms ease-out, box-shadow 150ms ease-out;
   text-wrap: nowrap;
+  -webkit-text-stroke: 0.8px #000;
+  paint-order: stroke fill;
+  text-shadow:
+    0.5px 0.5px 0 rgba(0,0,0,0.6),
+    -0.5px 0.5px 0 rgba(0,0,0,0.6);
 }
 
 .btn-launch:hover {
@@ -300,8 +322,8 @@
   position: relative;
   z-index: 10;
   align-self: flex-start;
-  margin-left: -0.25rem;
-  transform: translate(-8px, -18px);
+  margin-left: 2rem;
+  transform: translate(24px, -18px);
 }
 
 .deals-drawer {

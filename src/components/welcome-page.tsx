@@ -171,28 +171,17 @@ export function WelcomePage() {
       </div>
 
       <div className="relative z-10 flex h-full min-h-0 flex-col px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-[max(1.25rem,env(safe-area-inset-top))] sm:px-10">
-        <header className="flex items-start justify-between">
+        <header className="flex items-start justify-center">
           <BrandLogo />
         </header>
 
-        <section className="headline-block pop-in" style={{ animationDelay: "80ms" }}>
-          <div className="headline-sparks">
-            <span className="spark spark-1" />
-            <span className="spark spark-2" />
-            <span className="spark spark-3" />
-            <span className="spark spark-4" />
-            <span className="spark spark-5" />
-            <span className="spark spark-6" />
-          </div>
+        <section className="headline-block pop-in mt-36 pl-24 sm:mt-44 sm:pl-36" style={{ animationDelay: "80ms" }}>
           <p className="line-small">WELCOME TO</p>
           <h1 className="line-hero mt-0.5">WE LOVE DEALS</h1>
           <p className="line-large mt-0.5">FAMILY</p>
         </section>
 
-        <button type="button" className="live-deals-link" onClick={toggleDrawer}>
-          Peek at live deals
-          <ChevronUp className="size-4" strokeWidth={2.5} />
-        </button>
+
 
         <div className="launch-wrap mt-auto mb-[4.5vh] sm:mb-[6vh]" style={{ animationDelay: "180ms" }}>
           <span className="btn-launch-pulse" />
