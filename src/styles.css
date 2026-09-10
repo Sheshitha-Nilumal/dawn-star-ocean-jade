@@ -165,14 +165,21 @@
   );
   z-index: -1;
   pointer-events: none;
-  opacity: 0.28;
+  opacity: 0.32;
+  /* Fade in from center, solid in mid-section, fade out at tips */
   mask-image: radial-gradient(
-    ellipse 75% 65% at 50% 50%,
-    black 30%, transparent 100%
+    ellipse 78% 68% at 50% 50%,
+    transparent 15%,
+    black       32%,
+    black       58%,
+    transparent 100%
   );
   -webkit-mask-image: radial-gradient(
-    ellipse 75% 65% at 50% 50%,
-    black 30%, transparent 100%
+    ellipse 78% 68% at 50% 50%,
+    transparent 15%,
+    black       32%,
+    black       58%,
+    transparent 100%
   );
 }
 
