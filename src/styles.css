@@ -280,16 +280,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 6.2rem;
-  min-width: min(88vw, 25rem);
-  padding: 1.6rem 3.8rem;
+  min-height: 6.8rem;
+  min-width: min(90vw, 27rem);
+  padding: 1.8rem 4.2rem;
   border: none;
   border-radius: var(--radius-pill);
   background: var(--color-orange);
   color: #fff;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(1.75rem, 5.8vw, 3rem);
+  font-size: clamp(1.9rem, 6.2vw, 3.2rem);
   letter-spacing: 0.01em;
   line-height: 1;
   box-shadow: var(--shadow-launch);
@@ -330,7 +330,7 @@
   z-index: 10;
   align-self: flex-start;
   margin-left: 2rem;
-  transform: translate(24px, -48px);
+  transform: translate(24px, -72px);
 }
 
 .deals-drawer {
