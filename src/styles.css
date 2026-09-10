@@ -154,32 +154,32 @@
 .headline-block::before {
   content: '';
   position: absolute;
-  width: 160%;
-  height: 260%;
-  top: -80%;
-  left: -30%;
+  width: 220%;
+  height: 360%;
+  top: -130%;
+  left: -60%;
   background: repeating-conic-gradient(
     from 0deg at 50% 50%,
-    rgba(255, 109, 31, 0.82) 0deg 3deg,
-    transparent                3deg 45deg
+    rgba(255, 109, 31, 0.9) 0deg 3deg,
+    transparent               3deg 45deg
   );
   z-index: -1;
   pointer-events: none;
   opacity: 0.32;
-  /* Fade in from center, solid in mid-section, fade out at tips */
+  /* Tips fade out at 78% — well inside element boundary (100%), no sharp edge */
   mask-image: radial-gradient(
-    ellipse 78% 68% at 50% 50%,
-    transparent 15%,
-    black       32%,
-    black       58%,
-    transparent 100%
+    ellipse 55% 42% at 50% 50%,
+    transparent 12%,
+    black       28%,
+    black       54%,
+    transparent 78%
   );
   -webkit-mask-image: radial-gradient(
-    ellipse 78% 68% at 50% 50%,
-    transparent 15%,
-    black       32%,
-    black       58%,
-    transparent 100%
+    ellipse 55% 42% at 50% 50%,
+    transparent 12%,
+    black       28%,
+    black       54%,
+    transparent 78%
   );
 }
 
